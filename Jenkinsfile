@@ -19,7 +19,7 @@ pipeline {
                     def appImage = docker.build("nucesops/ca5:${env.IMAGE_TAG}")
                     docker.withRegistry('https://index.docker.io/v1/', env.DOCKERHUB_CREDENTIALS_ID) {
                         appImage.push("${env.IMAGE_TAG}")
-                        appImage.push("latest")
+                        appImage.push("1.0")
                     }
                 }
             }
